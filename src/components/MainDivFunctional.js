@@ -4,11 +4,10 @@ function MainDivFunctional(){
     const [counter, setCounter] = useState(0);
     const [toDoList, setToDoList] = useState([]);
     const [toDoItemAdd, setToDoItemAdd] = useState("");
-    const [toDoItemRemove, setToDoItemRemove] = useState("");
     const [warning, setWarning] = useState("");
 
     const handleAdd = () => {
-        if(toDoItemAdd != ""){
+        if(toDoItemAdd !== ""){
             setCounter(counter + 1);
             let tempArr = toDoList;
             tempArr.push(toDoItemAdd);
@@ -20,7 +19,7 @@ function MainDivFunctional(){
     };
 
     const handleAddEnter = (event) => {
-        if(event.key == "Enter"){
+        if(event.key === "Enter"){
             handleAdd();
         }
     };
@@ -38,8 +37,6 @@ function MainDivFunctional(){
     const handleRemove = (indexParam) => {
         setCounter(counter - 1);
         let tempArr = toDoList;
-        // setToDoItemRemove(toDoList.at(indexParam));
-        // tempArr.remove(toDoItemRemove);
         tempArr.splice(indexParam, 1);
         setToDoList(tempArr);
     }
@@ -62,7 +59,7 @@ function MainDivFunctional(){
                 ))
 
     const handleOnChange = (event) => {
-        if(warning != ""){
+        if(warning !== ""){
             setWarning("");
         }
         setToDoItemAdd(event.target.value);
