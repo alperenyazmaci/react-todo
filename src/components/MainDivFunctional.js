@@ -10,8 +10,10 @@ function MainDivFunctional(){
         if(toDoItemAdd !== ""){
             setCounter(counter + 1);
             let tempArr = toDoList;
+            let tempWarning = toDoItemAdd.concat(" is added.");
             tempArr.push(toDoItemAdd);
             setToDoList(tempArr);
+            setWarning(tempWarning);
             setToDoItemAdd("");
         }else{
             setWarning("Please enter an item.");
