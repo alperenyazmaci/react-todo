@@ -39,6 +39,8 @@ function MainDivFunctional(){
     const handleRemove = (indexParam) => {
         setCounter(counter - 1);
         let tempArr = toDoList;
+        let tempItemRemoved = toDoList.at(indexParam);
+        setWarning(tempItemRemoved + " is removed.");
         tempArr.splice(indexParam, 1);
         setToDoList(tempArr);
     }
